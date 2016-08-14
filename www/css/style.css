@@ -1,0 +1,53 @@
+/* Empty. Add your own CSS if you like */
+@mainColor:#000000;
+
+/*.platform-ios .bar{
+
+
+}*/
+
+.pinkBackground {
+  background-color: #A00000 !important;
+}
+.lightPinkFont{
+  color:#ED4C79;
+}
+.myButton {
+  color:pink !important;
+}
+.floatRight{
+  float:right;
+}
+.bar .title{
+  color:#ffffff !important;
+}
+
+.whiteFont {
+  color: #fff;
+}
+.item{
+  border-color: #A00000 !important;
+}
+.smallFont{
+  font-size: 14px;
+}
+input::-webkit-input-placeholder {
+color: #A07279 !important;
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+color: #A07279 !important;
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+color: #A07279 !important;
+}
+
+input:-ms-input-placeholder {
+color: #A07279 !important;
+}
+.myHeader{
+  color:#ed1e79;
+  font-size: 20px;
+  width:70px;
+}

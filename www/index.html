@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+  <link href="css/style.css" rel="stylesheet">
+  <!-- compiled css output -->
+  <link href="css/ionic.app.css" rel="stylesheet">
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+
+  <!-- your app's js -->
+  <script src="js/app.js"></script>
+  <script src="js/currency.controller.js"></script>
+</head>
+<body ng-app="starter">
+
+  <ion-pane>
+    <ion-header-bar class="bar-stable pinkBackground">
+      <h1 class="title">Krishna's Own Converter</h1>
+    </ion-header-bar>
+    <ion-content ng-controller='currency.controller' padding="true">
+      <!-- <li class="fa fa-inr"></li> -->
+      <!-- <span class="myHeader"  ng-bind-html="title">C</span> -->
+      <!-- <button class="button icon ion-arrow-swap floatRight myButton"></button> -->
+      <!-- <h5 class="lightPinkFont" ng-bind-template="Current rate for {{rupeeSign}} to $ is {{todaysRate.toFixed(2)}}"></h5> -->
+      <!-- <label class="item item-input">
+      <input ng-model="dollar" type="number" placeholder="Type dollar amount to convert to rupee" ng-change="calculate('$')" >
+    </label>
+    <label class="item item-input">
+    <input type="number" ng-model="inr" placeholder="Type rupee to convert to dollar" min="0" ng-change="calculate();"/>
+  </label> -->
+  <div class="card">
+    <div class="item item-divider pinkBackground">
+      <span class="whiteFont">Current rate for &#8377 to $ : {{todaysRate.toFixed(2)}}</span>
+    </div>
+    <div class="item item-text-wrap">
+      <label class="item-input">
+        <input ng-model="dollar" type="number" placeholder="Type $ amount to convert to &#8377" ng-change="calculate('$')" >
+      </label>
+      <label class="item item-input">
+        <input type="number" ng-model="inr" placeholder="Type &#8377 to convert to $" min="0" ng-change="calculate();"/>
+      </label>
+    </div>
+  </div>
+  <div class="title smallFont">Rates last updated : {{lastUpdated}}</div>
+</ion-content><div class="bar bar-footer bar-stable pinkBackground">
+  <div class="title smallFont">&copy / &reg Krishna  </div>
+
+</div>
+</ion-pane>
+</body>
+</html>
