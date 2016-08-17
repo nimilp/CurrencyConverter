@@ -16,6 +16,7 @@
   <!-- your app's js -->
   <script src="js/app.js"></script>
   <script src="js/currency.controller.js"></script>
+  <script src="js/directives.js"></script>
 </head>
 <body ng-app="starter">
 
@@ -39,17 +40,17 @@
       <span class="whiteFont">Current rate for &#8377 to $ : {{todaysRate.toFixed(2)}}</span>
     </div>
     <div class="item item-text-wrap">
-      <label class="item-input">
-        <input ng-model="dollar" value="dollar" type="number" placeholder="Type $ amount to convert to &#8377" ng-change="calculate('$')" >
+      <label class="item-input "><span class="lightPinkFont">&#8377 </span>&nbsp;
+        <input currency-formatter ng-model="dollar" type="text" placeholder="Type $ amount to convert to &#8377" ng-change="calculate('$')" >
       </label>
-      <label class="item item-input">
-        <input type="number" ng-model="inr" placeholder="Type &#8377 to convert to $" min="0" ng-change="calculate();"/>
+      <label class="item item-input"><span class="lightPinkFont">$ </span>&nbsp;
+        <input currency-formatter type="text" ng-model="inr" placeholder="Type &#8377 to convert to $" min="0" ng-change="calculate();"/>
       </label>
     </div>
   </div>
   <div class="notice">Rates last updated : {{lastUpdated}}</div>
 </ion-content><div class="bar bar-footer bar-stable pinkBackground">
-  <div class="title smallFont">&copy / &reg Krishna  </div>
+  <div class="title smallFont">&copy Nimil / &reg Krishna  </div>
 
 </div>
 </ion-pane>

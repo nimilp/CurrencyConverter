@@ -10,7 +10,7 @@
   background-color: #A00000 !important;
 }
 .lightPinkFont{
-  color:#ED4C79;
+  color:#A00;
 }
 .myButton {
   color:pink !important;
@@ -29,7 +29,7 @@
   border-color: #A00000 !important;
 }
 .smallFont{
-  font-size: 14px;
+  font-size: 10px !important;
 }
 input::-webkit-input-placeholder {
 color: #A07279 !important;

@@ -2,7 +2,7 @@
 (
   function(){
     angular.module('currency.module',[])
-    .controller('currency.controller',['$scope','$sce','$http',function($scope,$sce,$http){
+    .controller('currency.controller',['$scope','$http',function($scope,$http){
       // var rupeeSign = $sce.trustAsHtml('&#8377');
       var httpCall = function($http){
         $http({
@@ -29,24 +29,24 @@
         if(base==undefined){
           base='INR';
         }
-        console.log((this))
-        var amount;
-        if(base==='INR'){
+        console.log('calculate function ($)',$scope.dollar)
 
-          amount = parseFloat(($scope.inr / $scope.todaysRate).toFixed(2));
-          amount = amount===0?'' :amount
-          $scope.dollar = amount;
-        }else{
-          amount = parseFloat(($scope.dollar*$scope.todaysRate).toFixed(2));
-          $scope.inr = amount===0?'':amount;
+        if(base==='INR'){
+          $scope.dollar = convert($scope.inr);
+        } else{
+
+          $scope.inr = convert($scope.dollar);
         }
       }
 
-      function format(val){
-        if (val === 0){
+      function convert(amount){
+        var amount;
+        amount = (amount / $scope.todaysRate).toFixed(2);
+        if (amount === 0){
           return '';
+        } else{
+          return amount;
         }
-
       }
 
     }])
