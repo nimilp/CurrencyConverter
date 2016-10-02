@@ -32,16 +32,20 @@
         console.log('calculate function ($)',$scope.dollar)
 
         if(base==='INR'){
-          $scope.dollar = convert($scope.inr);
+          $scope.dollar = convert($scope.inr,'INR');
         } else{
 
-          $scope.inr = convert($scope.dollar);
+          $scope.inr = convert($scope.dollar,'$');
         }
       }
 
-      function convert(amount){
+      function convert(amount,base){
         var amount;
-        amount = (amount / $scope.todaysRate).toFixed(2);
+        if(base !== 'INR')
+          amount = (amount / $scope.todaysRate).toFixed(2);
+        else {
+          amount = (amount * $scope.todaysRate).toFixed(2);
+        }
         if (amount === 0){
           return '';
         } else{
